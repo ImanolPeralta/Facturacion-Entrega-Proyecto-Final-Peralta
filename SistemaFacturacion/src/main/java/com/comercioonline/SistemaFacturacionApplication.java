@@ -1,5 +1,7 @@
 package com.comercioonline;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,27 +26,187 @@ public class SistemaFacturacionApplication implements CommandLineRunner {
 		
 		try {
 			
-			Producto producto1 = new Producto("Notebook MacBook Pro 4", 1450000, "MacBook Pro con chip M3, pantalla Retina de 14 pulgadas, 16GB RAM, 512GB SSD", 10);
-			Producto producto2 = new Producto("Teclado mecánico Logitech G915", 210000, "Teclado inalámbrico mecánico de bajo perfil con retroiluminación RGB", 15);
-			Producto producto3 = new Producto("Mouse Ergonómico Logitech MX Master 3", 145000, "Mouse inalámbrico con diseño ergonómico, ideal para trabajo prolongado", 20);
-			Producto producto4 = new Producto("Silla Ergonómica Homestool", 250000, "Silla ejecutiva ergonómica con soporte lumbar y apoyabrazos ajustables", 12);
-			Producto producto5 = new Producto("Monitor ultrawide LG 34WN80C", 620000, "Monitor de 34 pulgadas ultrawide QHD con USB-C y tecnología IPS", 8);
-			Producto producto6 = new Producto("Auriculares Gamer Sony WH-1000XM5", 390000, "Auriculares con cancelación de ruido activa, bluetooth y micrófono integrado", 18);
-			Producto producto7 = new Producto("Brazo Articulado para Monitor Ergotron LX", 135000, "Soporte ajustable premium para monitores hasta 34 pulgadas", 10);
-			Producto producto8 = new Producto("Tiras LED Govee", 45000, "Luces LED inteligentes RGB con control desde app móvil", 30);
-			Producto producto9 = new Producto("PC Armada Ryzen 9 9950X3D | 32GB DDR5 | 1TB NVMe", 1890000, "PC de alta gama para desarrollo y gaming extremo, con GPU RTX 4080", 5);
-			Producto producto10 = new Producto("Pack de 2 cuadros desarrollador Front-End / Back-End", 30000, "Decoración temática para espacios de trabajo de desarrolladores", 25);
+			Producto producto1 = Producto.builder()
+				    .nombre("Notebook MacBook Pro 4")
+				    .precio(1450000)
+				    .descripcion("MacBook Pro con chip M3, pantalla Retina de 14 pulgadas, 16GB RAM, 512GB SSD")
+				    .stock(10)
+				    .build();
+
+				Producto producto2 = Producto.builder()
+				    .nombre("Teclado mecánico Logitech G915")
+				    .precio(210000)
+				    .descripcion("Teclado inalámbrico mecánico de bajo perfil con retroiluminación RGB")
+				    .stock(15)
+				    .build();
+
+				Producto producto3 = Producto.builder()
+				    .nombre("Mouse Ergonómico Logitech MX Master 3")
+				    .precio(145000)
+				    .descripcion("Mouse inalámbrico con diseño ergonómico, ideal para trabajo prolongado")
+				    .stock(20)
+				    .build();
+
+				Producto producto4 = Producto.builder()
+				    .nombre("Silla Ergonómica Homestool")
+				    .precio(250000)
+				    .descripcion("Silla ejecutiva ergonómica con soporte lumbar y apoyabrazos ajustables")
+				    .stock(12)
+				    .build();
+
+				Producto producto5 = Producto.builder()
+				    .nombre("Monitor ultrawide LG 34WN80C")
+				    .precio(620000)
+				    .descripcion("Monitor de 34 pulgadas ultrawide QHD con USB-C y tecnología IPS")
+				    .stock(8)
+				    .build();
+
+				Producto producto6 = Producto.builder()
+				    .nombre("Auriculares Gamer Sony WH-1000XM5")
+				    .precio(390000)
+				    .descripcion("Auriculares con cancelación de ruido activa, bluetooth y micrófono integrado")
+				    .stock(18)
+				    .build();
+
+				Producto producto7 = Producto.builder()
+				    .nombre("Brazo Articulado para Monitor Ergotron LX")
+				    .precio(135000)
+				    .descripcion("Soporte ajustable premium para monitores hasta 34 pulgadas")
+				    .stock(10)
+				    .build();
+
+				Producto producto8 = Producto.builder()
+				    .nombre("Tiras LED Govee")
+				    .precio(45000)
+				    .descripcion("Luces LED inteligentes RGB con control desde app móvil")
+				    .stock(30)
+				    .build();
+
+				Producto producto9 = Producto.builder()
+				    .nombre("PC Armada Ryzen 9 9950X3D | 32GB DDR5 | 1TB NVMe")
+				    .precio(1890000)
+				    .descripcion("PC de alta gama para desarrollo y gaming extremo, con GPU RTX 4080")
+				    .stock(5)
+				    .build();
+
+				Producto producto10 = Producto.builder()
+				    .nombre("Pack de 2 cuadros desarrollador Front-End / Back-End")
+				    .precio(30000)
+				    .descripcion("Decoración temática para espacios de trabajo de desarrolladores")
+				    .stock(25)
+				    .build();
+
 			
-			Cliente cliente1 = new Cliente("Imanol", "Peralta", "25 De Mayo 1973, Corrientes, Argentina", 3500, "imanolaugusto18@gmail.com", 40818163, 3735636568L);
-			Cliente cliente2 = new Cliente("Lucía", "Gómez", "San Martín 1024, Resistencia, Chaco", 3600, "lucia.gomez@gmail.com", 40123456, 3624789123L);
-			Cliente cliente3 = new Cliente("Martín", "Rodríguez", "Belgrano 854, Formosa", 3700, "martinr@hotmail.com", 39876543, 3701234567L);
-			Cliente cliente4 = new Cliente("Camila", "López", "Av. Rivadavia 300, Buenos Aires", 1000, "camilopez@yahoo.com", 42345678, 1145637890L);
-			Cliente cliente5 = new Cliente("Juan", "Fernández", "Sarmiento 999, Mendoza", 5500, "juan.fer@gmail.com", 41234567, 2613344556L);
-			Cliente cliente6 = new Cliente("Sofía", "Martínez", "Maipú 455, Córdoba", 5000, "sofi.martinez@gmail.com", 41789456, 3517896541L);
-			Cliente cliente7 = new Cliente("Diego", "Sosa", "Italia 1830, Salta", 4400, "dsosa@gmail.com", 39001234, 3876677889L);
-			Cliente cliente8 = new Cliente("Florencia", "Torres", "Mitre 77, Tucumán", 4000, "flor.torres@gmail.com", 40567891, 3814455667L);
-			Cliente cliente9 = new Cliente("Carlos", "Ramírez", "España 1880, Santa Fe", 3000, "cramirez@outlook.com", 42233445, 3427788990L);
-			Cliente cliente10 = new Cliente("Valentina", "Morales", "Av. Libertador 1200, San Juan", 5400, "valenmorales@gmail.com", 41889900, 2645566778L);
+			Cliente cliente1 = Cliente.builder()
+				    .nombre("Imanol")
+				    .apellido("Peralta")
+				    .domicilio("25 De Mayo 1973, Corrientes, Argentina")
+				    .codigoPostal(3500)
+				    .email("imanolaugusto18@gmail.com")
+				    .dni(40818163)
+				    .telefono(3735636568L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente2 = Cliente.builder()
+				    .nombre("Lucía")
+				    .apellido("Gómez")
+				    .domicilio("San Martín 1024, Resistencia, Chaco")
+				    .codigoPostal(3600)
+				    .email("lucia.gomez@gmail.com")
+				    .dni(40123456)
+				    .telefono(3624789123L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente3 = Cliente.builder()
+				    .nombre("Martín")
+				    .apellido("Rodríguez")
+				    .domicilio("Belgrano 854, Formosa")
+				    .codigoPostal(3700)
+				    .email("martinr@hotmail.com")
+				    .dni(39876543)
+				    .telefono(3701234567L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente4 = Cliente.builder()
+				    .nombre("Camila")
+				    .apellido("López")
+				    .domicilio("Av. Rivadavia 300, Buenos Aires")
+				    .codigoPostal(1000)
+				    .email("camilopez@yahoo.com")
+				    .dni(42345678)
+				    .telefono(1145637890L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente5 = Cliente.builder()
+				    .nombre("Juan")
+				    .apellido("Fernández")
+				    .domicilio("Sarmiento 999, Mendoza")
+				    .codigoPostal(5500)
+				    .email("juan.fer@gmail.com")
+				    .dni(41234567)
+				    .telefono(2613344556L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente6 = Cliente.builder()
+				    .nombre("Sofía")
+				    .apellido("Martínez")
+				    .domicilio("Maipú 455, Córdoba")
+				    .codigoPostal(5000)
+				    .email("sofi.martinez@gmail.com")
+				    .dni(41789456)
+				    .telefono(3517896541L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente7 = Cliente.builder()
+				    .nombre("Diego")
+				    .apellido("Sosa")
+				    .domicilio("Italia 1830, Salta")
+				    .codigoPostal(4400)
+				    .email("dsosa@gmail.com")
+				    .dni(39001234)
+				    .telefono(3876677889L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente8 = Cliente.builder()
+				    .nombre("Florencia")
+				    .apellido("Torres")
+				    .domicilio("Mitre 77, Tucumán")
+				    .codigoPostal(4000)
+				    .email("flor.torres@gmail.com")
+				    .dni(40567891)
+				    .telefono(3814455667L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente9 = Cliente.builder()
+				    .nombre("Carlos")
+				    .apellido("Ramírez")
+				    .domicilio("España 1880, Santa Fe")
+				    .codigoPostal(3000)
+				    .email("cramirez@outlook.com")
+				    .dni(42233445)
+				    .telefono(3427788990L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
+				Cliente cliente10 = Cliente.builder()
+				    .nombre("Valentina")
+				    .apellido("Morales")
+				    .domicilio("Av. Libertador 1200, San Juan")
+				    .codigoPostal(5400)
+				    .email("valenmorales@gmail.com")
+				    .dni(41889900)
+				    .telefono(2645566778L)
+				    .createdAt(LocalDateTime.now())
+				    .build();
+
 
 			dao.persistirProducto(producto1);
 			dao.persistirProducto(producto2);

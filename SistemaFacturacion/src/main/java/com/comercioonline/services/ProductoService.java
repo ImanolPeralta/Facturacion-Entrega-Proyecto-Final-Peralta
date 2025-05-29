@@ -63,4 +63,19 @@ public class ProductoService implements CrudInterface<Producto, Long> {
         }
         productoRepository.deleteById(id);
     }
+    
+    // Este Script es el que actualiza todos los precios de los productos en general si existe un porcentaje de inflación.
+    @Transactional
+    public List<Producto> actualizarPreciosPorInflacion(double porcentajeInflacion) {
+        List<Producto> productos = productoRepository.findAll();
+
+        for (Producto producto : productos) {
+            int precioActual = producto.getPrecio();
+            int nuevoPrecio = (int) Math.round(precioActual * (1 + porcentajeInflacion / 100.0));
+            producto.setPrecio(nuevoPrecio);
+        }
+
+        return productoRepository.saveAll(productos); // Guarda todos los productos actualizados
+    }
+
 }

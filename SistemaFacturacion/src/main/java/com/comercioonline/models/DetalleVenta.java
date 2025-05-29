@@ -1,16 +1,8 @@
 package com.comercioonline.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Getter
 @Setter
@@ -18,21 +10,35 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "Detalle de la Venta")
+@Table(name = "detalle_venta")
+@Schema(description = "Modelo que representa el detalle de una venta")
 public class DetalleVenta {
 
-	@Id // Primary Key
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // Valor autoincremental.
-	private Long id;
-	
-	@Column(name = "Producto", nullable = false)
-	private String producto;
-	@Column(name = "Cantidad", nullable = false)
-	private int cantidad;
-	@Column(name = "Precio Unitario", nullable = false)
-	private int precioUnitario;
-	@Column(name = "Subtotal", nullable = false)
-	private int subtotal;
-	@Column(name = "Venta", nullable = false)
-	private String venta;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "ID del detalle de venta", example = "1")
+    private Long id;
+
+    @Column(nullable = false)
+    @Schema(description = "Nombre del producto", example = "Mouse inalámbrico")
+    private String producto;
+
+    @Column(nullable = false)
+    @Schema(description = "Cantidad del producto vendida", example = "3")
+    private int cantidad;
+
+    @Column(nullable = false)
+    @Schema(description = "Precio unitario del producto", example = "1500")
+    private int precioUnitario;
+
+    @Column(nullable = false)
+    @Schema(description = "Subtotal (cantidad * precio unitario)", example = "4500")
+    private int subtotal;
+
+    // ✅ Relación real con Venta
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "venta_id", nullable = false)
+    @ToString.Exclude
+    @Schema(description = "Venta asociada a este detalle", hidden = true)
+    private Venta venta;
 }

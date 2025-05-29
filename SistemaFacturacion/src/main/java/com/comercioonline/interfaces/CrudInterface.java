@@ -8,9 +8,9 @@ public interface CrudInterface<T, ID> {
 
     T findById(ID id);
 
-    T save(T entity); // ← Corregido: quitamos el ID
+    T save(T entity); 
 
-    T update(ID id, T entity); // ← También corrijo "uptdate" → "update"
+    T update(ID id, T entity);
 
     void deleteById(ID id);
 }

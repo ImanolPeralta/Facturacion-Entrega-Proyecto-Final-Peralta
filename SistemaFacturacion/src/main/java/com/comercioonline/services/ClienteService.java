@@ -5,13 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.comercioonline.dto.ClienteProductoDTO;
 import com.comercioonline.interfaces.CrudInterface;
 import com.comercioonline.models.Cliente;
-import com.comercioonline.models.Producto;
 import com.comercioonline.repositories.ClienteRepository;
-import com.comercioonline.repositories.ProductoRepository;
-
 import jakarta.transaction.Transactional;
 
 @Service
@@ -19,9 +15,6 @@ public class ClienteService implements CrudInterface<Cliente, Long> {
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
-	@Autowired
-	private ProductoRepository productoRepository;
 	
 	@Override
 	public List<Cliente> findAll() {
@@ -76,26 +69,4 @@ public class ClienteService implements CrudInterface<Cliente, Long> {
 		}
 		clienteRepository.deleteById(id);
 	}
-	
-	@Transactional
-	public Cliente asociarClienteConProducto(ClienteProductoDTO dto) {
-		Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElseThrow(() -> new IllegalArgumentException("Cliente no encontrado"));
-		
-		for (Long productoId : dto.getProductoIds()) {
-			Producto producto = productoRepository.findById(productoId).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado"));
-			
-			// Verificar que el cliente haya adquirido ese producto
-			if(cliente.getProductos().contains(producto)) {
-				throw new IllegalStateException("El cliente ya adquirió previamente ese producto con ID: " + productoId);
-			}
-			
-			cliente.getProductos().add(producto);
-			producto.getClientes().add(cliente);
-			productoRepository.save(producto);
-		}
-	
-	return clienteRepository.save(cliente);
-	
-	}
-	
 }

@@ -36,7 +36,7 @@ CREATE TABLE `clientes` (
   UNIQUE KEY `UKm6ysdwsqke00e5piajbvgn6lg` (`dni`),
   UNIQUE KEY `UK8mb9o41joa58huvkh2iybta9k` (`correo electrónico`),
   UNIQUE KEY `UKte2bg4qgueouwr2dyyey75mj9` (`número de teléfono`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Peralta',3500,NULL,40818163,'25 De Mayo 1973, Corrientes, Argentina','imanolaugusto18@gmail.com','Imanol',3735636568),(2,'Gómez',3600,NULL,40123456,'San Martín 1024, Resistencia, Chaco','lucia.gomez@gmail.com','Lucía',3624789123),(3,'Rodríguez',3700,NULL,39876543,'Belgrano 854, Formosa','martinr@hotmail.com','Martín',3701234567),(4,'López',1000,NULL,42345678,'Av. Rivadavia 300, Buenos Aires','camilopez@yahoo.com','Camila',1145637890),(5,'Fernández',5500,NULL,41234567,'Sarmiento 999, Mendoza','juan.fer@gmail.com','Juan',2613344556),(6,'Martínez',5000,NULL,41789456,'Maipú 455, Córdoba','sofi.martinez@gmail.com','Sofía',3517896541),(7,'Sosa',4400,NULL,39001234,'Italia 1830, Salta','dsosa@gmail.com','Diego',3876677889),(8,'Torres',4000,NULL,40567891,'Mitre 77, Tucumán','flor.torres@gmail.com','Florencia',3814455667),(9,'Ramírez',3000,NULL,42233445,'España 1880, Santa Fe','cramirez@outlook.com','Carlos',3427788990),(10,'Morales',5400,NULL,41889900,'Av. Libertador 1200, San Juan','valenmorales@gmail.com','Valentina',2645566778);
+INSERT INTO `clientes` VALUES (1,'González',5500,'2025-05-29 01:17:57.032000',12345678,'25 De Mayo, 123','cliente@example.com','Pedro',5491123456789),(2,'Martínez',1406,'2025-05-29 01:18:10.000000',23456789,'Calle San Juan, 456','lucia.martinez@example.com','Lucía',5491134567820),(3,'Fernández',5000,'2025-05-29 01:18:25.000000',34567890,'Av. Córdoba 789','julian.fernandez@example.com','Julián',5491167890123),(4,'Sánchez',7600,'2025-05-29 01:18:40.000000',45678901,'Belgrano 987','carla.sanchez@example.com','Carla',5491145678901),(5,'Ramírez',8300,'2025-05-29 01:19:00.000000',56789012,'España 654','matias.ramirez@example.com','Matías',5491178901234),(6,'Peralta',3500,'2025-05-29 01:20:22.480000',40818163,'Álvarez Thomas n°20','imanolaugusto18@gmail.com','Imanol',3735636568);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 15:42:30
+-- Dump completed on 2025-05-29  0:00:38

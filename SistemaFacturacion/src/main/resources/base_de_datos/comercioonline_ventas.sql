@@ -26,10 +26,9 @@ CREATE TABLE `ventas` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `cliente` varchar(255) NOT NULL,
   `fecha` datetime(6) NOT NULL,
-  `detalle de la venta` varchar(255) NOT NULL,
   `total` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +37,7 @@ CREATE TABLE `ventas` (
 
 LOCK TABLES `ventas` WRITE;
 /*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+INSERT INTO `ventas` VALUES (1,'Pedro','2025-05-28 22:37:22.625567',1110000),(2,'Imanol','2025-05-28 22:41:04.020260',2791998),(3,'Imanol','2025-05-28 22:48:53.809072',2791998);
 /*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 15:42:30
+-- Dump completed on 2025-05-29  0:00:38

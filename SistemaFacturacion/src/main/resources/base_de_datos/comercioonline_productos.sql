@@ -30,7 +30,7 @@ CREATE TABLE `productos` (
   `stock` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKmlgw7js72hh2xtd4mvpdqfsbe` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'MacBook Pro con chip M3, pantalla Retina de 14 pulgadas, 16GB RAM, 512GB SSD','Notebook MacBook Pro 4',1450000,10),(2,'Teclado inalámbrico mecánico de bajo perfil con retroiluminación RGB','Teclado mecánico Logitech G915',210000,15),(3,'Mouse inalámbrico con diseño ergonómico, ideal para trabajo prolongado','Mouse Ergonómico Logitech MX Master 3',145000,20),(4,'Silla ejecutiva ergonómica con soporte lumbar y apoyabrazos ajustables','Silla Ergonómica Homestool',250000,12),(5,'Monitor de 34 pulgadas ultrawide QHD con USB-C y tecnología IPS','Monitor ultrawide LG 34WN80C',620000,8),(6,'Auriculares con cancelación de ruido activa, bluetooth y micrófono integrado','Auriculares Gamer Sony WH-1000XM5',390000,18),(7,'Soporte ajustable premium para monitores hasta 34 pulgadas','Brazo Articulado para Monitor Ergotron LX',135000,10),(8,'Luces LED inteligentes RGB con control desde app móvil','Tiras LED Govee',45000,30),(9,'PC de alta gama para desarrollo y gaming extremo, con GPU RTX 4080','PC Armada Ryzen 9 9950X3D | 32GB DDR5 | 1TB NVMe',1890000,5),(10,'Decoración temática para espacios de trabajo de desarrolladores','Pack de 2 cuadros desarrollador Front-End / Back-End',30000,25);
+INSERT INTO `productos` VALUES (1,'Apple MacBook Air (13 pulgadas, 2020, Chip M1, 256 GB de SSD, 8 GB de RAM) - Gris espacial','Apple MacBook Air',1616614,3),(2,'Notebook ultraliviana ideal para desarrollo de software, con procesador Intel i7, 32GB de RAM y SSD de 1TB.','Notebook Lenovo ThinkPad X1 Carbon',350350,7),(3,'Monitor profesional de 27 pulgadas con resolución 4K UHD, ideal para multitarea y edición de código.','Monitor Dell UltraSharp 27\'\' 4K',220220,13),(4,'Teclado mecánico inalámbrico con retroiluminación y switches táctiles, diseñado para largas sesiones de programación.','Teclado Mecánico Keychron K8',60060,24),(6,'Auriculares inalámbricos con cancelación activa de ruido, ideales para concentrarse durante el desarrollo.','Auriculares Sony WH-1000XM5',160160,12),(7,'Monitor LG 29wp60g-b De 29 Ultra Panorámico Full Hd, Ips, Hd','Monitor LG 29wp60g-b',957956,1);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 15:42:30
+-- Dump completed on 2025-05-29  0:00:38
